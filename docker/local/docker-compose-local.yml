@@ -1,0 +1,15 @@
+version: "3"
+services:
+  server:
+    container_name: devcamp-example-backend-server-local
+    image: devcamp-example-backend-server-local:latest
+    build:
+      context: ../../
+      dockerfile: docker/Dockerfile
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - PROFILE=local
+      - PORT=8080
+      - TZ=Asia/Seoul
